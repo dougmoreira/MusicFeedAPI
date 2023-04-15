@@ -26,6 +26,12 @@ final class MusicFeedAPITests: XCTestCase {
         XCTAssertEqual(client.getCallCount, 1)
         XCTAssertEqual(client.passedURL, url)
     }
+    
+    func test_load_deliversConnectivityErrorOnClientError() {
+        let (sut, client) = makeSUT()
+        
+        
+    }
 
 }
 

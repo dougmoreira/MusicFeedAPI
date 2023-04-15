@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemoteFeedLoader: FeedLoader {
+public final class RemoteFeedLoader: MusicFeedLoaderProtocol {
     private let client: HTTPClient
     private let URL: URL
     
@@ -16,7 +16,7 @@ public final class RemoteFeedLoader: FeedLoader {
         self.URL = url
     }
     
-    public func load(completion: @escaping (FeedLoader.Result) -> Void) {
+    public func load(completion: @escaping (MusicFeedLoaderProtocol.Result) -> Void) {
         client.get(from: URL) { result in
             
         }
@@ -26,12 +26,12 @@ public final class RemoteFeedLoader: FeedLoader {
     
 }
 
-public protocol FeedLoader {
-    typealias Result = Swift.Result<[FeedMusic], Error>
+public protocol MusicFeedLoaderProtocol {
+    typealias Result = Swift.Result<[FeedMusicModel], MusicFeedLoaderError>
     func load(completion:@escaping (Result) -> Void)
 }
 
-public struct FeedMusic: Hashable {
+public struct FeedMusicModel: Hashable {
     public let id: String
     public let description: String
 }
@@ -40,4 +40,9 @@ public protocol HTTPClient {
     typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
     
     func get(from url: URL, completion: @escaping (Result) -> Void)
+}
+
+public enum MusicFeedLoaderError: Error {
+    case connectivity
+    case invalidData
 }
