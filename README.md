@@ -20,3 +20,18 @@ MusicFeedAPI is a Swift library that provides an interface for loading music fee
 ## Installation
 
 - Just clone the repo and run
+
+## Usage
+
+import MusicFeedAPI
+
+let loader = RemoteMusicFeedLoader(client: HTTPClient(), url: URL(string: "https://example.com/api/music/feed")!)
+loader.load { result in
+    switch result {
+    case .success(let musicFeed):
+        // Do something with musicFeed
+    case .failure(let error):
+        // Handle error
+    }
+}
+
