@@ -1,7 +1,7 @@
 # MusicFeedAPI
 
 [![Swift Version](https://img.shields.io/badge/swift-5.0-orange.svg)](https://swift.org/)
-[![Xcode Version](https://img.shields.io/badge/xcode-12.5-blue.svg)](https://developer.apple.com/xcode/)
+[![Xcode Version](https://img.shields.io/badge/xcode-14.2-blue.svg)](https://developer.apple.com/xcode/)
 
 MusicFeedAPI is a Swift library that provides an interface for loading music feeds from a remote server via HTTP requests.
 
@@ -23,7 +23,7 @@ MusicFeedAPI is a Swift library that provides an interface for loading music fee
 
 ## Usage
 
-``
+```
 
 import MusicFeedAPI
 
@@ -37,4 +37,4 @@ loader.load { result in
     }
 }
 
-``
+```
