@@ -8,6 +8,14 @@
 import Foundation
 
 public final class RemoteFeedLoader: FeedLoader {
+    private let client: HTTPClient
+    private let URL: URL
+    
+    public init(client: HTTPClient, url: URL) {
+        self.client = client
+        self.URL = url
+    }
+    
     public func load(completion: @escaping (FeedLoader.Result) -> Void) {
         
     }
@@ -23,4 +31,10 @@ public protocol FeedLoader {
 public struct FeedMusic: Hashable {
     public let id: String
     public let description: String
+}
+
+public protocol HTTPClient {
+    typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
+    
+    func get(from url: URL, completion: @escaping (Result) -> Void)
 }
