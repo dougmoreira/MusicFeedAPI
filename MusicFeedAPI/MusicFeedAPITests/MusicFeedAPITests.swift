@@ -17,6 +17,14 @@ final class MusicFeedAPITests: XCTestCase {
         XCTAssertNil(client.passedURL)
         
     }
+    
+    func test_load_shouldRequestOnce() {
+        let (sut, client) = makeSUT()
+        
+        sut.load { _ in }
+        
+        XCTAssertEqual(client.getCallCount, 1)
+    }
 
 }
 
