@@ -14,6 +14,7 @@
 		7460231229EAD0E600FD8D5B /* MusicFeedAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231129EAD0E600FD8D5B /* MusicFeedAPITests.swift */; };
 		7460231C29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231B29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift */; };
 		7460231E29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */; };
+		7460232B29EAD3B300FD8D5B /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232A29EAD3B300FD8D5B /* RemoteFeedLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		7460231729EAD0E600FD8D5B /* MusicFeedAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicFeedAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7460231B29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPIUITests.swift; sourceTree = "<group>"; };
 		7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7460232A29EAD3B300FD8D5B /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				7460230329EAD0E600FD8D5B /* Assets.xcassets */,
 				7460230529EAD0E600FD8D5B /* MusicFeedAPI.entitlements */,
 				7460230629EAD0E600FD8D5B /* Preview Content */,
+				7460232A29EAD3B300FD8D5B /* RemoteFeedLoader.swift */,
 			);
 			path = MusicFeedAPI;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7460230229EAD0E400FD8D5B /* ContentView.swift in Sources */,
+				7460232B29EAD3B300FD8D5B /* RemoteFeedLoader.swift in Sources */,
 				7460230029EAD0E400FD8D5B /* MusicFeedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
