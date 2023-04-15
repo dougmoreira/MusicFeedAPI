@@ -8,7 +8,7 @@
 import Foundation
 
 public final class RemoteFeedLoader: FeedLoader {
-    public func load(completion: @escaping (Result) -> Void) {
+    public func load(completion: @escaping (FeedLoader.Result) -> Void) {
         
     }
     
