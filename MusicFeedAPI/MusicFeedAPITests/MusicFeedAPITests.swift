@@ -10,16 +10,15 @@ import XCTest
 @testable import MusicFeedAPI
 
 final class MusicFeedAPITests: XCTestCase {
-    let url = URL(string: "any-URL")!
-    
     func test_init_doesNotRequestDataFromURL() {
-        let (_, client) = makeSUT(url: url)
+        let (_, client) = makeSUT()
         
         XCTAssertNil(client.passedURL)
         
     }
     
     func test_load_shouldRequestDataFromURLOnce() {
+        let url = URL(string: "other-url")!
         let (sut, client) = makeSUT(url: url)
         
         sut.load { _ in }
@@ -31,7 +30,7 @@ final class MusicFeedAPITests: XCTestCase {
 }
 
 extension MusicFeedAPITests {
-    private func makeSUT(url: URL) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
         let clientSpy = HTTPClientSpy()
         let sut = RemoteFeedLoader(client: clientSpy, url: url)
         
