@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class RemoteFeedLoader: MusicFeedLoaderProtocol {
+public final class RemoteMusicFeedLoader: MusicFeedLoaderProtocol {
     private let client: HTTPClient
     private let URL: URL
     

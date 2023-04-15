@@ -27,18 +27,18 @@ final class MusicFeedAPITests: XCTestCase {
         XCTAssertEqual(client.passedURL, url)
     }
     
-    func test_load_deliversConnectivityErrorOnClientError() {
-        let (sut, client) = makeSUT()
-        
-        
-    }
+//    func test_load_deliversConnectivityErrorOnClientError() {
+//        let (sut, client) = makeSUT()
+//
+//
+//    }
 
 }
 
 extension MusicFeedAPITests {
-    private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: RemoteFeedLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: RemoteMusicFeedLoader, client: HTTPClientSpy) {
         let clientSpy = HTTPClientSpy()
-        let sut = RemoteFeedLoader(client: clientSpy, url: url)
+        let sut = RemoteMusicFeedLoader(client: clientSpy, url: url)
         
         return (sut, clientSpy)
     }
