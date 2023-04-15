@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7460230029EAD0E400FD8D5B /* MusicFeedAPIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746022FF29EAD0E400FD8D5B /* MusicFeedAPIApp.swift */; };
+		7460230029EAD0E400FD8D5B /* MusicFeedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746022FF29EAD0E400FD8D5B /* MusicFeedApp.swift */; };
 		7460230229EAD0E400FD8D5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460230129EAD0E400FD8D5B /* ContentView.swift */; };
 		7460230429EAD0E600FD8D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7460230329EAD0E600FD8D5B /* Assets.xcassets */; };
 		7460230829EAD0E600FD8D5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7460230729EAD0E600FD8D5B /* Preview Assets.xcassets */; };
@@ -35,7 +35,7 @@
 
 /* Begin PBXFileReference section */
 		746022FC29EAD0E400FD8D5B /* MusicFeedAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicFeedAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		746022FF29EAD0E400FD8D5B /* MusicFeedAPIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPIApp.swift; sourceTree = "<group>"; };
+		746022FF29EAD0E400FD8D5B /* MusicFeedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedApp.swift; sourceTree = "<group>"; };
 		7460230129EAD0E400FD8D5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7460230329EAD0E600FD8D5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7460230529EAD0E600FD8D5B /* MusicFeedAPI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MusicFeedAPI.entitlements; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		746022FE29EAD0E400FD8D5B /* MusicFeedAPI */ = {
 			isa = PBXGroup;
 			children = (
-				746022FF29EAD0E400FD8D5B /* MusicFeedAPIApp.swift */,
+				746022FF29EAD0E400FD8D5B /* MusicFeedApp.swift */,
 				7460230129EAD0E400FD8D5B /* ContentView.swift */,
 				7460230329EAD0E600FD8D5B /* Assets.xcassets */,
 				7460230529EAD0E600FD8D5B /* MusicFeedAPI.entitlements */,
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7460230229EAD0E400FD8D5B /* ContentView.swift in Sources */,
-				7460230029EAD0E400FD8D5B /* MusicFeedAPIApp.swift in Sources */,
+				7460230029EAD0E400FD8D5B /* MusicFeedApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
