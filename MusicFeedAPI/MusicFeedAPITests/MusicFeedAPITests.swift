@@ -13,7 +13,7 @@ final class MusicFeedAPITests: XCTestCase {
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
         
-        XCTAssertNil(client.passedURL)
+        XCTAssertTrue(client.requestedURLs.isEmpty)
         
     }
     
@@ -24,15 +24,9 @@ final class MusicFeedAPITests: XCTestCase {
         sut.load { _ in }
         
         XCTAssertEqual(client.getCallCount, 1)
-        XCTAssertEqual(client.passedURL, url)
+        XCTAssertEqual(client.requestedURLs, [url])
     }
     
-//    func test_load_deliversConnectivityErrorOnClientError() {
-//        let (sut, client) = makeSUT()
-//
-//
-//    }
-
 }
 
 extension MusicFeedAPITests {
@@ -42,15 +36,38 @@ extension MusicFeedAPITests {
         
         return (sut, clientSpy)
     }
+    
+    func expect(_ sut: RemoteMusicFeedLoader, toCompleteWith expectedResult: Result<[FeedMusicModel], MusicFeedLoaderError>) {
+        let exp = expectation(description: "Wait for load completion")
+        
+        sut.load { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedItems), .success(expecteditems)):
+                XCTAssertEqual(receivedItems, expecteditems)
+                
+            case let (.failure(receivedError), .failure(expectedError)):
+                XCTAssertEqual(receivedError, expectedError)
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead")
+            }
+        }
+        
+        exp.fulfill()
+        waitForExpectations(timeout: 0.1)
+        
+    }
 }
 
 public class HTTPClientSpy: HTTPClient {
+    public var requestedURLs: [URL] {
+        messages.map { $0.url }
+    }
     
     public private(set) var getCallCount: Int = 0
-    public private(set) var passedURL: URL?
+    public private(set) var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
     
     public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
         getCallCount += 1
-        passedURL = url
+        messages.append((url, completion))
     }
 }
