@@ -23,6 +23,8 @@ MusicFeedAPI is a Swift library that provides an interface for loading music fee
 
 ## Usage
 
+``
+
 import MusicFeedAPI
 
 let loader = RemoteMusicFeedLoader(client: HTTPClient(), url: URL(string: "https://example.com/api/music/feed")!)
@@ -35,3 +37,4 @@ loader.load { result in
     }
 }
 
+``
