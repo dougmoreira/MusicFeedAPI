@@ -18,6 +18,12 @@ public final class RemoteMusicFeedLoader: MusicFeedLoaderProtocol {
     
     public func load(completion: @escaping (MusicFeedLoaderProtocol.Result) -> Void) {
         client.get(from: URL) { result in
+            switch result {
+            case .success((_, _)):
+                debugPrint("success")
+            case .failure:
+                completion(.failure(.connectivity))
+            }
             
         }
         
