@@ -24,12 +24,8 @@ public final class MusicFeedLoader: MusicFeedLoaderProtocol {
             case .failure:
                 completion(.failure(.connectivity))
             }
-            
         }
-        
     }
-    
-    
 }
 
 public protocol MusicFeedLoaderProtocol {
