@@ -53,12 +53,16 @@ final class MusicFeedAPITests: XCTestCase {
 
 /// Helpers
 extension MusicFeedAPITests {
-    private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: MusicFeedLoader, client: HTTPClientSpy) {
+    private func makeSUT(
+        url: URL = URL(string: "any-url")!,
+        file: StaticString = #filePath,
+        line: UInt = #line
+    ) -> (sut: MusicFeedLoader, client: HTTPClientSpy) {
         let clientSpy = HTTPClientSpy()
         let sut = MusicFeedLoader(client: clientSpy, url: url)
         
-        trackForMemoryLeaks(clientSpy)
-        trackForMemoryLeaks(sut)
+        trackForMemoryLeaks(clientSpy, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
         
         return (sut, clientSpy)
     }
