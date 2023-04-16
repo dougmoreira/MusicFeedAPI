@@ -19,6 +19,7 @@
 		7460232F29EB7CCD00FD8D5B /* MusicFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */; };
 		7460233129EB7D7200FD8D5B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460233029EB7D7200FD8D5B /* HTTPClient.swift */; };
 		7460233429EB7E0200FD8D5B /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460233329EB7E0200FD8D5B /* HTTPClientSpy.swift */; };
+		7460233729EC9FA400FD8D5B /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460233629EC9FA400FD8D5B /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedModel.swift; sourceTree = "<group>"; };
 		7460233029EB7D7200FD8D5B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		7460233329EB7E0200FD8D5B /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		7460233629EC9FA400FD8D5B /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		7460231029EAD0E600FD8D5B /* MusicFeedAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				7460233529EC9F8200FD8D5B /* Helpers */,
 				7460233229EB7DF200FD8D5B /* Spy */,
 				7460231129EAD0E600FD8D5B /* MusicFeedAPITests.swift */,
 			);
@@ -150,6 +153,14 @@
 				7460233329EB7E0200FD8D5B /* HTTPClientSpy.swift */,
 			);
 			path = Spy;
+			sourceTree = "<group>";
+		};
+		7460233529EC9F8200FD8D5B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7460233629EC9FA400FD8D5B /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 			files = (
 				7460231229EAD0E600FD8D5B /* MusicFeedAPITests.swift in Sources */,
 				7460233429EB7E0200FD8D5B /* HTTPClientSpy.swift in Sources */,
+				7460233729EC9FA400FD8D5B /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,6 +57,9 @@ extension MusicFeedAPITests {
         let clientSpy = HTTPClientSpy()
         let sut = MusicFeedLoader(client: clientSpy, url: url)
         
+        trackForMemoryLeaks(clientSpy)
+        trackForMemoryLeaks(sut)
+        
         return (sut, clientSpy)
     }
     

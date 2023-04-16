@@ -17,7 +17,9 @@ public final class MusicFeedLoader: MusicFeedLoaderProtocol {
     }
     
     public func load(completion: @escaping (MusicFeedLoaderProtocol.Result) -> Void) {
-        client.get(from: URL) { result in
+        client.get(from: URL) { [weak self] result in
+            guard self != nil else { return }
+            
             switch result {
             case let .success((data, response)):
                 completion(FeedMusicMapper.map(data, from: response))
