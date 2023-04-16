@@ -49,6 +49,15 @@ final class MusicFeedAPITests: XCTestCase {
         }
     }
     
+    func test_load_deliversInvalidDataErrorOn200HTTPResponseWithInvalidJSON() {
+        let (sut, client) = makeSUT()
+        
+        expect(sut, toCompleteWith: .failure(.invalidData)) {
+            let invalidJSON = Data("Invalid JSON".utf8)
+            client.complete(withStatusCode: 200, data: invalidJSON)
+        }
+    }
+    
 }
 
 /// Helpers
