@@ -33,11 +33,11 @@ public final class MusicFeedLoader: MusicFeedLoaderProtocol {
 }
 
 public protocol MusicFeedLoaderProtocol {
-    typealias Result = Swift.Result<[FeedMusicModel], MusicFeedLoaderError>
+    typealias Result = Swift.Result<[MusicFeedModel], MusicFeedLoaderError>
     func load(completion:@escaping (Result) -> Void)
 }
 
-public struct FeedMusicModel: Hashable {
+public struct MusicFeedModel: Hashable {
     public let id: String
     public let description: String
 }

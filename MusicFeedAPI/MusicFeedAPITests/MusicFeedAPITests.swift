@@ -59,7 +59,7 @@ extension MusicFeedAPITests {
         return (sut, clientSpy)
     }
     
-    func expect(_ sut: MusicFeedLoader, toCompleteWith expectedResult: Result<[FeedMusicModel], MusicFeedLoaderError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    func expect(_ sut: MusicFeedLoader, toCompleteWith expectedResult: Result<[MusicFeedModel], MusicFeedLoaderError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
 
         sut.load { receivedResult in

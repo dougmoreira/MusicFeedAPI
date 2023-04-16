@@ -13,7 +13,7 @@ final class FeedMusicMapper {
     private struct Root: Decodable {
         let items: [Item]
 
-        var feed: [FeedMusicModel] {
+        var feed: [MusicFeedModel] {
             return items.map { $0.item }
         }
     }
@@ -27,8 +27,8 @@ final class FeedMusicMapper {
             case description = "music_desc"
         }
 
-        var item: FeedMusicModel {
-            return FeedMusicModel(id: id, description: description)
+        var item: MusicFeedModel {
+            return MusicFeedModel(id: id, description: description)
         }
     }
 
