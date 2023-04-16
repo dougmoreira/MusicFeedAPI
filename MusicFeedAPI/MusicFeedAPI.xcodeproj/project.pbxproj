@@ -16,6 +16,8 @@
 		7460231E29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */; };
 		7460232B29EAD3B300FD8D5B /* MusicFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232A29EAD3B300FD8D5B /* MusicFeedLoader.swift */; };
 		7460232D29EB7ACC00FD8D5B /* FeedMusicMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232C29EB7ACC00FD8D5B /* FeedMusicMapper.swift */; };
+		7460232F29EB7CCD00FD8D5B /* MusicFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */; };
+		7460233129EB7D7200FD8D5B /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460233029EB7D7200FD8D5B /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7460232A29EAD3B300FD8D5B /* MusicFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedLoader.swift; sourceTree = "<group>"; };
 		7460232C29EB7ACC00FD8D5B /* FeedMusicMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMusicMapper.swift; sourceTree = "<group>"; };
+		7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedModel.swift; sourceTree = "<group>"; };
+		7460233029EB7D7200FD8D5B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				7460230629EAD0E600FD8D5B /* Preview Content */,
 				7460232A29EAD3B300FD8D5B /* MusicFeedLoader.swift */,
 				7460232C29EB7ACC00FD8D5B /* FeedMusicMapper.swift */,
+				7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */,
+				7460233029EB7D7200FD8D5B /* HTTPClient.swift */,
 			);
 			path = MusicFeedAPI;
 			sourceTree = "<group>";
@@ -267,8 +273,10 @@
 			files = (
 				7460230229EAD0E400FD8D5B /* ContentView.swift in Sources */,
 				7460232B29EAD3B300FD8D5B /* MusicFeedLoader.swift in Sources */,
+				7460233129EB7D7200FD8D5B /* HTTPClient.swift in Sources */,
 				7460232D29EB7ACC00FD8D5B /* FeedMusicMapper.swift in Sources */,
 				7460230029EAD0E400FD8D5B /* MusicFeedApp.swift in Sources */,
+				7460232F29EB7CCD00FD8D5B /* MusicFeedModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

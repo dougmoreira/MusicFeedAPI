@@ -8,10 +8,10 @@
 import Foundation
 
 public final class MusicFeedLoader: MusicFeedLoaderProtocol {
-    private let client: HTTPClient
+    private let client: HTTPClientProtocol
     private let URL: URL
     
-    public init(client: HTTPClient, url: URL) {
+    public init(client: HTTPClientProtocol, url: URL) {
         self.client = client
         self.URL = url
     }
@@ -35,20 +35,4 @@ public final class MusicFeedLoader: MusicFeedLoaderProtocol {
 public protocol MusicFeedLoaderProtocol {
     typealias Result = Swift.Result<[MusicFeedModel], MusicFeedLoaderError>
     func load(completion:@escaping (Result) -> Void)
-}
-
-public struct MusicFeedModel: Hashable {
-    public let id: String
-    public let description: String
-}
-
-public protocol HTTPClient {
-    typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
-    
-    func get(from url: URL, completion: @escaping (Result) -> Void)
-}
-
-public enum MusicFeedLoaderError: Swift.Error {
-    case connectivity
-    case invalidData
 }

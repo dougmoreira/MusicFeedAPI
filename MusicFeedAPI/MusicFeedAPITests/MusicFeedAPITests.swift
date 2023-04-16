@@ -51,6 +51,7 @@ final class MusicFeedAPITests: XCTestCase {
     
 }
 
+/// Helpers
 extension MusicFeedAPITests {
     private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: MusicFeedLoader, client: HTTPClientSpy) {
         let clientSpy = HTTPClientSpy()
@@ -88,15 +89,15 @@ extension MusicFeedAPITests {
     }
 }
 
-public class HTTPClientSpy: HTTPClient {
+public class HTTPClientSpy: HTTPClientProtocol {
     public var requestedURLs: [URL] {
         messages.map { $0.url }
     }
     
     public private(set) var getCallCount: Int = 0
-    public private(set) var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+    public private(set) var messages = [(url: URL, completion: (HTTPClientProtocol.Result) -> Void)]()
     
-    public func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
+    public func get(from url: URL, completion: @escaping (HTTPClientProtocol.Result) -> Void) {
         getCallCount += 1
         messages.append((url, completion))
     }
