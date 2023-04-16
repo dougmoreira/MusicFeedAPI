@@ -52,14 +52,14 @@ final class MusicFeedAPITests: XCTestCase {
 }
 
 extension MusicFeedAPITests {
-    private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: RemoteMusicFeedLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = URL(string: "any-url")!) -> (sut: MusicFeedLoader, client: HTTPClientSpy) {
         let clientSpy = HTTPClientSpy()
-        let sut = RemoteMusicFeedLoader(client: clientSpy, url: url)
+        let sut = MusicFeedLoader(client: clientSpy, url: url)
         
         return (sut, clientSpy)
     }
     
-    func expect(_ sut: RemoteMusicFeedLoader, toCompleteWith expectedResult: Result<[FeedMusicModel], MusicFeedLoaderError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
+    func expect(_ sut: MusicFeedLoader, toCompleteWith expectedResult: Result<[FeedMusicModel], MusicFeedLoaderError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
 
         sut.load { receivedResult in
