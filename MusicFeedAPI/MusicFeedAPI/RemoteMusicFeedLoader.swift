@@ -42,7 +42,7 @@ public protocol HTTPClient {
     func get(from url: URL, completion: @escaping (Result) -> Void)
 }
 
-public enum MusicFeedLoaderError: Error {
+public enum MusicFeedLoaderError: Swift.Error {
     case connectivity
     case invalidData
 }

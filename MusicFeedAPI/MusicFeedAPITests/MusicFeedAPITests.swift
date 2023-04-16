@@ -37,24 +37,27 @@ extension MusicFeedAPITests {
         return (sut, clientSpy)
     }
     
-    func expect(_ sut: RemoteMusicFeedLoader, toCompleteWith expectedResult: Result<[FeedMusicModel], MusicFeedLoaderError>) {
+    func expect(_ sut: RemoteMusicFeedLoader, toCompleteWith expectedResult: Result<[FeedMusicModel], MusicFeedLoaderError>, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line) {
         let exp = expectation(description: "Wait for load completion")
-        
+
         sut.load { receivedResult in
             switch (receivedResult, expectedResult) {
-            case let (.success(receivedItems), .success(expecteditems)):
-                XCTAssertEqual(receivedItems, expecteditems)
-                
+            case let (.success(receivedItems), .success(expectedItems)):
+                XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
+
             case let (.failure(receivedError), .failure(expectedError)):
-                XCTAssertEqual(receivedError, expectedError)
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
             default:
-                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead")
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
             }
+
+            exp.fulfill()
         }
-        
-        exp.fulfill()
+
+        action()
+
         waitForExpectations(timeout: 0.1)
-        
     }
 }
 
