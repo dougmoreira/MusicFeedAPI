@@ -36,6 +36,19 @@ final class MusicFeedAPITests: XCTestCase {
         }
     }
     
+    func test_load_deliversInvalidDataErrorOnNon200HTTPResonse() {
+        let (sut, client) = makeSUT()
+        
+        let errorCodes = [199, 201, 300, 400, 500]
+        
+        errorCodes.enumerated().forEach { index, code in
+            expect(sut, toCompleteWith: .failure(.invalidData)) {
+                let json = makeItemsJSON([])
+                client.complete(withStatusCode: code, data: json, at: index)
+            }
+        }
+    }
+    
 }
 
 extension MusicFeedAPITests {
@@ -67,6 +80,11 @@ extension MusicFeedAPITests {
         action()
 
         waitForExpectations(timeout: 0.1)
+    }
+    
+    private func makeItemsJSON(_ items: [[String: Any]]) -> Data {
+        let json = ["items": items]
+        return try! JSONSerialization.data(withJSONObject: json)
     }
 }
 

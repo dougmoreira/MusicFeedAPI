@@ -19,8 +19,8 @@ public final class RemoteMusicFeedLoader: MusicFeedLoaderProtocol {
     public func load(completion: @escaping (MusicFeedLoaderProtocol.Result) -> Void) {
         client.get(from: URL) { result in
             switch result {
-            case .success((_, _)):
-                debugPrint("success")
+            case let .success((data, response)):
+                completion(FeedMusicMapper.map(data, from: response))
             case .failure:
                 completion(.failure(.connectivity))
             }
