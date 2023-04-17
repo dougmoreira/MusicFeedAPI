@@ -58,4 +58,22 @@ final class MusicFeedAPITests: XCTestCase {
         }
     }
     
+    func test_load_deliversInvalidDataErrorOn200HTTPResponseWithPartiallyValidJSONItems() {
+        let (sut, client) = makeSUT()
+
+        let validItem = makeItem(
+            id: "123",
+            description: "test"
+        ).json
+
+        let invalidItem = ["invalid": "item"]
+
+        let items = [validItem, invalidItem]
+
+        expect(sut, toCompleteWith: .failure(.invalidData), when: {
+            let json = makeItemsJSON(items)
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
+    
 }

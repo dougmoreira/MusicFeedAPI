@@ -51,4 +51,15 @@ extension MusicFeedAPITests {
         let json = ["items": items]
         return try! JSONSerialization.data(withJSONObject: json)
     }
+    
+    func makeItem(id: String, description: String) -> (model: MusicFeedModel, json: [String: Any]) {
+        let item = MusicFeedModel(id: id, description: description)
+
+        let json = [
+            "music_id": id,
+            "music_desc": description
+        ].compactMapValues { $0 }
+
+        return (item, json)
+    }
 }
