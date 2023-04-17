@@ -12,8 +12,6 @@
 		7460230429EAD0E600FD8D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7460230329EAD0E600FD8D5B /* Assets.xcassets */; };
 		7460230829EAD0E600FD8D5B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7460230729EAD0E600FD8D5B /* Preview Assets.xcassets */; };
 		7460231229EAD0E600FD8D5B /* MusicFeedAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231129EAD0E600FD8D5B /* MusicFeedAPITests.swift */; };
-		7460231C29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231B29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift */; };
-		7460231E29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */; };
 		7460232B29EAD3B300FD8D5B /* MusicFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232A29EAD3B300FD8D5B /* MusicFeedLoader.swift */; };
 		7460232D29EB7ACC00FD8D5B /* FeedMusicMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232C29EB7ACC00FD8D5B /* FeedMusicMapper.swift */; };
 		7460232F29EB7CCD00FD8D5B /* MusicFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */; };
@@ -50,8 +48,6 @@
 		7460230D29EAD0E600FD8D5B /* MusicFeedAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicFeedAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7460231129EAD0E600FD8D5B /* MusicFeedAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPITests.swift; sourceTree = "<group>"; };
 		7460231729EAD0E600FD8D5B /* MusicFeedAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicFeedAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7460231B29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPIUITests.swift; sourceTree = "<group>"; };
-		7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7460232A29EAD3B300FD8D5B /* MusicFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedLoader.swift; sourceTree = "<group>"; };
 		7460232C29EB7ACC00FD8D5B /* FeedMusicMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMusicMapper.swift; sourceTree = "<group>"; };
 		7460232E29EB7CCD00FD8D5B /* MusicFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFeedModel.swift; sourceTree = "<group>"; };
@@ -91,7 +87,6 @@
 			children = (
 				746022FE29EAD0E400FD8D5B /* MusicFeedAPI */,
 				7460231029EAD0E600FD8D5B /* MusicFeedAPITests */,
-				7460231A29EAD0E600FD8D5B /* MusicFeedAPIUITests */,
 				746022FD29EAD0E400FD8D5B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,15 +133,6 @@
 				7460231129EAD0E600FD8D5B /* MusicFeedAPITests.swift */,
 			);
 			path = MusicFeedAPITests;
-			sourceTree = "<group>";
-		};
-		7460231A29EAD0E600FD8D5B /* MusicFeedAPIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7460231B29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift */,
-				7460231D29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift */,
-			);
-			path = MusicFeedAPIUITests;
 			sourceTree = "<group>";
 		};
 		7460233229EB7DF200FD8D5B /* Spy */ = {
@@ -320,8 +306,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7460231C29EAD0E600FD8D5B /* MusicFeedAPIUITests.swift in Sources */,
-				7460231E29EAD0E600FD8D5B /* MusicFeedAPIUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
