@@ -85,4 +85,25 @@ final class MusicFeedAPITests: XCTestCase {
         })
     }
     
+    func test_load_deliversSuccessWithItemsOn200HTTPResponseWithJSONItems() {
+        let (sut, client) = makeSUT()
+
+        let item1 = makeItem(
+            id: "id1",
+            description: "desc"
+        )
+
+        let item2 = makeItem(
+            id: "id2",
+            description: "a description"
+        )
+
+        let items = [item1.model, item2.model]
+
+        expect(sut, toCompleteWith: .success(items), when: {
+            let json = makeItemsJSON([item1.json, item2.json])
+            client.complete(withStatusCode: 200, data: json)
+        })
+    }
+    
 }
