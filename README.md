@@ -14,3 +14,4 @@ This repository contains unit tests for the MusicFeedAPI module, which provides 
 ## Tests
 
 The `MusicFeedAPITests.swift` file contains several unit tests for the MusicFeedAPI module. These tests use a mock implementation of the HTTPClient protocol to simulate data retrieval from the remote server and test various scenarios, such as connectivity errors, invalid data errors, and successful retrieval of data. To run the tests, simply build and run the `CI` scheme in Xcode.
+
